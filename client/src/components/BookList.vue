@@ -1,7 +1,19 @@
 <template>
   <main>
+    <div class="py-4">
+      <div class="categories flex space-x-2">
+        <button @click="filterBooks('')" :class="{ 'bg-blue-500 text-white': selectedCategory === '' }">
+          Todos
+        </button>
+        <button v-for="category in categories" :key="category" @click="filterBooks(category)"
+          :class="{ 'bg-blue-500 text-white': selectedCategory === category, 'bg-gray-300': selectedCategory !== category }"
+          class="hover:bg-blue-600 hover:text-white transition-all">
+          {{ category }}
+        </button>
+      </div>
+    </div>
     <div class="grid grid-cols-4 gap-4">
-      <Book v-for="book in books" :key="book.title" :title="book.title" :author="book.author" :genre="book.genre"
+      <Book v-for="book in filteredBooks" :key="book.title" :title="book.title" :author="book.author" :genre="book.genre"
         :pages="book.number_of_pages" :synopsis="book.synopsis" class="max-w-sm rounded overflow-hidden shadow-lg" />
     </div>
   </main>
@@ -16,30 +28,45 @@ export default {
   },
   data() {
     return {
-      books: [
-        {
-          "title": "The Catcher in the Rye",
-          "author": "J.D. Salinger",
-          "genre": "Fiction",
-          "number_of_pages": 224,
-          "synopsis": "The Catcher in the Rye is a novel by J.D. Salinger. It follows the story of Holden Caulfield, a disenchanted teenager, as he navigates the challenges of adolescence in New York City. The book is known for its exploration of teenage angst and the search for meaning in a complex world."
-        },
-        {
-          "title": "To Kill a Mockingbird",
-          "author": "Harper Lee",
-          "genre": "Fiction",
-          "number_of_pages": 324,
-          "synopsis": "To Kill a Mockingbird is a classic novel by Harper Lee. It tells the story of a young girl named Scout Finch and her brother Jem as they witness their father, Atticus Finch, defend an African American man accused of rape in a racially divided Southern town. The book explores themes of racism, justice, and morality."
-        },
-        {
-          "title": "1984",
-          "author": "George Orwell",
-          "genre": "Dystopian Fiction",
-          "number_of_pages": 328,
-          "synopsis": "1984 is a dystopian novel by George Orwell. It is set in a totalitarian society where the government exercises total control over every aspect of people's lives. The story follows the life of Winston Smith, who begins to question the oppressive regime and seeks to rebel against it."
-        }
-      ]
+      books: [],
+      selectedCategory: '',
+      categories: []
     };
+  },
+  created() {
+    fetch('/books.json')
+      .then(response => response.json())
+      .then(data => {
+        this.books = data;
+        this.categories = this.getCategories(data);
+      })
+      .catch(error => {
+        console.error('Error al cargar los datos:', error);
+      });
+  },
+  computed: {
+    filteredBooks() {
+      if (this.selectedCategory === '')
+        return this.books;
+
+      return this.books.filter(book => book.genre === this.selectedCategory);
+    }
+  },
+  methods: {
+    getCategories(data) {
+      const categories = data.map(book => book.genre);
+      const uniqueCategories = []
+      categories.forEach(category => {
+        if (!uniqueCategories.includes(category)) {
+          uniqueCategories.push(category);
+        }
+      })
+
+      return uniqueCategories
+    },
+    filterBooks(category) {
+      this.selectedCategory = category;
+    }
   }
 };
 </script>
