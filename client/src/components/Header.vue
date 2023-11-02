@@ -4,7 +4,9 @@
   <header class="flex items-center w-full bg-white dark:bg-dark">
     <div class="container mx-auto">
       <div class="relative flex items-center justify-between -mx-4">
-        <p>Icon</p>
+        <img class="w-20 h-20"
+          src="https://thumbs.dreamstime.com/b/beautiful-meticulously-designed-library-icon-perfect-use-designing-developing-websites-printed-materials-presentations-112019830.jpg"
+          alt="Librería">
         <div class="flex items-center justify-between w-full px-4">
           <div>
             <button

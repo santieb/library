@@ -1,17 +1,6 @@
 <template>
   <main>
-    <div class="py-4">
-      <div class="categories flex space-x-2">
-        <button @click="filterBooks('')" :class="{ 'bg-blue-500 text-white': selectedCategory === '' }">
-          Todos
-        </button>
-        <button v-for="category in categories" :key="category" @click="filterBooks(category)"
-          :class="{ 'bg-blue-500 text-white': selectedCategory === category, 'bg-gray-300': selectedCategory !== category }"
-          class="hover:bg-blue-600 hover:text-white transition-all">
-          {{ category }}
-        </button>
-      </div>
-    </div>
+    <filter-bar :selectedCategory="selectedCategory" :categories="categories" @filter="filterBooks" />
     <div class="grid grid-cols-4 gap-4">
       <Book v-for="book in filteredBooks" :key="book.title" :title="book.title" :author="book.author" :genre="book.genre"
         :pages="book.number_of_pages" :synopsis="book.synopsis" class="max-w-sm rounded overflow-hidden shadow-lg" />
@@ -21,10 +10,12 @@
 
 <script>
 import Book from './Book.vue'
+import FilterBar from './FilterBar.vue';
 
 export default {
   components: {
-    Book
+    Book,
+    FilterBar
   },
   data() {
     return {
