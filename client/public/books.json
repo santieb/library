@@ -19,5 +19,61 @@
     "genre": "Dystopian Fiction",
     "number_of_pages": 328,
     "synopsis": "1984 is a dystopian novel by George Orwell. It is set in a totalitarian society where the government exercises total control over every aspect of people's lives. The story follows the life of Winston Smith, who begins to question the oppressive regime and seeks to rebel against it."
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Fiction",
+    "number_of_pages": 279,
+    "synopsis": "Pride and Prejudice is a beloved novel by Jane Austen. It follows the story of Elizabeth Bennet, a strong-willed young woman, and her complex relationship with the enigmatic Mr. Darcy. The book explores themes of social class, love, and personal growth."
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Fiction",
+    "number_of_pages": 180,
+    "synopsis": "The Great Gatsby is a classic novel by F. Scott Fitzgerald. It takes place in the 1920s and centers around the wealthy and mysterious Jay Gatsby and his obsession with the beautiful Daisy Buchanan. The book delves into themes of wealth, excess, and the American Dream."
+  },
+  {
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "genre": "Dystopian Fiction",
+    "number_of_pages": 288,
+    "synopsis": "Brave New World is a dystopian novel by Aldous Huxley. It is set in a futuristic world where technology and hedonism have created a seemingly perfect society. However, as one character begins to question the price of this perfection, the book explores themes of conformity, individuality, and the cost of societal stability."
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fiction",
+    "number_of_pages": 310,
+    "synopsis": "The Hobbit is a fantasy novel by J.R.R. Tolkien. It tells the story of Bilbo Baggins, a hobbit who embarks on an epic adventure to help a group of dwarves reclaim their homeland from the dragon Smaug. The book is a classic in the fantasy genre."
+  },
+  {
+    "title": "Lord of the Flies",
+    "author": "William Golding",
+    "genre": "Fiction",
+    "number_of_pages": 224,
+    "synopsis": "Lord of the Flies is a novel by William Golding. It follows a group of British boys stranded on a deserted island and their descent into savagery as they attempt to govern themselves. The book explores themes of human nature and the inherent evil within."
+  },
+  {
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "genre": "Dystopian Fiction",
+    "number_of_pages": 374,
+    "synopsis": "The Hunger Games is a dystopian novel by Suzanne Collins. It takes place in a future society where young people are forced to participate in a televised fight to the death. The story follows Katniss Everdeen as she battles for survival and challenges the oppressive government."
+  },
+  {
+    "title": "The Shining",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "number_of_pages": 447,
+    "synopsis": "The Shining is a horror novel by Stephen King. It follows the Torrance family as they become the winter caretakers of the haunted Overlook Hotel. As the isolation sets in, the hotel's supernatural forces begin to torment them, particularly young Danny Torrance, who possesses psychic abilities."
+  },
+  {
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "genre": "Mystery",
+    "number_of_pages": 454,
+    "synopsis": "The Da Vinci Code is a mystery novel by Dan Brown. It follows Harvard symbologist Robert Langdon and French cryptologist Sophie Neveu as they unravel a series of clues to solve a murder and uncover a secret society's hidden agenda. The book is known for its fast-paced and intricate plot."
   }
 ]
