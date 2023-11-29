@@ -1,12 +1,31 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import BooksPage from '@/views/BooksPage.vue'; // Ajusta la ruta según tu estructura de carpetas
+import Home from '@/pages/Home.vue';
+import BooksPage from '@/pages/BooksPage.vue';
+import BookFormPage from '@/pages/BookFormPage.vue';
+import RegisterPage from '@/pages/RegisterPage.vue';
+import LoginPage from '@/pages/LoginPage.vue';
 
 const routes = [
   {
     path: '/',
+    component: Home,
+  },
+  {
+    path: '/books',
     component: BooksPage,
   },
-  // Otras rutas
+  {
+    path: '/book-form/:id?',
+    component: BookFormPage,
+  },
+  {
+    path: '/register',
+    component: RegisterPage,
+  },
+  {
+    path: '/login',
+    component: LoginPage,
+  }
 ];
 
 const router = createRouter({

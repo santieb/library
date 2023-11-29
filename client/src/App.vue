@@ -5,5 +5,5 @@ import BookList from './components/BookList.vue'
 
 <template>
     <Header />
-    <BookList/>
+    <router-view />
 </template>
