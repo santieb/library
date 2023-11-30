@@ -1,7 +1,5 @@
 <template>
-  <div>
     <BookList />
-  </div>
 </template>
 
 <script setup>

@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmitForm" class="max-w-md mx-auto mt-8">
+  <form @submit.prevent="handleSubmitForm" class="max-w-md mx-auto mt-8 rouded-lg shadow-md border-2 p-5">
     <h2 class="text-2xl font-bold mb-4">
       {{ isLogin ? 'Login' : 'Register' }}
     </h2>

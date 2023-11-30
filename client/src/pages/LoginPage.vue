@@ -1,7 +1,5 @@
 <template>
-  <div>
     <AuthForm :isLogin="true"/>
-  </div>
 </template>
 
 <script setup>

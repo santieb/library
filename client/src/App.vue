@@ -5,5 +5,7 @@ import BookList from './components/BookList.vue'
 
 <template>
     <Header />
-    <router-view />
+    <main class="max-w-[1200px]   items-center justify-center m-auto">
+        <router-view />
+    </main>
 </template>

@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  client:
+    container_name: library-client
+    build: ./client
+    ports:
+      - 5173:5173
+  server:
+    container_name: library-server
+    build: ./server
+    ports:
+      - 8082:8080
+    depends_on:
+      - database
+  database:
+    container_name: library-database
+    image: postgres:16.0-bookworm
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata: {}

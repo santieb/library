@@ -1,7 +1,5 @@
 <template>
-  <div>
     <BookForm />
-  </div>
 </template>
 
 <script setup>

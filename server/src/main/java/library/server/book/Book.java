@@ -1,10 +1,10 @@
-package library.server;
+package library.server.book;
 
 import jakarta.persistence.*;
 import org.springframework.context.annotation.Primary;
 
 @Entity
-@Table
+@Table(name = "library_book")
 public class Book {
 
     @Id
@@ -12,19 +12,19 @@ public class Book {
     private Long id;
     private String title;
     private String author;
-    private String gender;
-    private int num_pages;
-    private String sinopsis;
+    private String genre;
+    private int pages;
+    private String synopsis;
 
     public Book() {
     }
 
-    public Book(Long id, String title, String author, String gender, int num_pages, String sinopsis) {
+    public Book(Long id, String title, String author, String genre, int pages, String synopsis) {
         this.title = title;
         this.author = author;
-        this.gender = gender;
-        this.num_pages = num_pages;
-        this.sinopsis = sinopsis;
+        this.genre = genre;
+        this.pages = pages;
+        this.synopsis = synopsis;
     }
 
     public Long getId() {
@@ -51,27 +51,27 @@ public class Book {
         this.author = author;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public int getNum_pages() {
-        return num_pages;
+    public int getPages() {
+        return pages;
     }
 
-    public void setNum_pages(int num_pages) {
-        this.num_pages = num_pages;
+    public void setPages(int pages) {
+        this.pages = pages;
     }
 
-    public String getSinopsis() {
-        return sinopsis;
+    public String getSynopsis() {
+        return synopsis;
     }
 
-    public void setSinopsis(String sinopsis) {
-        this.sinopsis = sinopsis;
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis;
     }
 }

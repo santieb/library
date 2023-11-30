@@ -1,4 +1,4 @@
-package library.server;
+package library.server.book;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +16,11 @@ public class BookService {
 
     public List<Book> getBooks() {
         return this.bookRepository.findAll();
+    }
+
+    public Book getBookById(Long id) {
+        return this.bookRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Book not found"));
     }
 
     public void createBook(Book book) {
@@ -38,9 +43,9 @@ public class BookService {
         if (isValidBook(updatedBook)) {
             existingBook.setTitle(updatedBook.getTitle());
             existingBook.setAuthor(updatedBook.getAuthor());
-            existingBook.setGender(updatedBook.getGender());
-            existingBook.setNum_pages(updatedBook.getNum_pages());
-            existingBook.setSinopsis(updatedBook.getSinopsis());
+            existingBook.setGenre(updatedBook.getGenre());
+            existingBook.setPages(updatedBook.getPages());
+            existingBook.setSynopsis(updatedBook.getSynopsis());
 
             this.bookRepository.save(existingBook);
         } else {

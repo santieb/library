@@ -1,7 +1,5 @@
 <template>
-  <div>
     <BooksTable/>
-  </div>
 </template>
 
 <script setup>
