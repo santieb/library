@@ -11,7 +11,7 @@
 <script>
 import Book from './Book.vue'
 import FilterBar from './FilterBar.vue';
-
+const apiUrl = import.meta.env.VITE_API_URL;
 export default {
   components: {
     Book,
@@ -25,11 +25,11 @@ export default {
     };
   },
   created() {
-    fetch('http://localhost:8082/api/books')
+    fetch(`${apiUrl}/books`)
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            this.books = data; // Corregir esta línea
+            this.books = data;
             this.categories = this.getCategories(data);
         })
         .catch(error => {

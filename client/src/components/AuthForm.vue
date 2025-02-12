@@ -20,6 +20,7 @@
 </template>
 
 <script setup>
+const apiUrl = import.meta.env.VITE_API_URL;
 import { ref, onMounted, defineProps } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -38,7 +39,7 @@ const handleSubmitForm = async () => {
     console.log('Submitting form:', authForm.value);
     console.log(authForm.value)
     const endpoint = props.isLogin ? '/login' : '';
-    const response = await fetch(`http://localhost:8082/api/users${endpoint}`, {
+    const response = await fetch(`${apiUrl}/users${endpoint}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

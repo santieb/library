@@ -32,6 +32,7 @@
 </template>
 
 <script setup>
+const apiUrl = import.meta.env.VITE_API_URL
 import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -62,7 +63,7 @@ onMounted(() => {
 
 const loadBookDetails = async () => {
   try {
-    const response = await fetch(`http://localhost:8082/api/books/${bookId.value}`);
+    const response = await fetch(`${apiUrl}/books/${bookId.value}`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -96,7 +97,7 @@ const submitForm = async () => {
 
 const updateBook = async () => {
   try {
-    const url = `http://localhost:8082/api/books/${book.value.id}`;
+    const url = `${apiUrl}/books/${book.value.id}`;
     const method = 'PUT';
 
     const response = await fetch(url, {
@@ -122,9 +123,8 @@ const updateBook = async () => {
 
 const createBook = async () => {
   try {
-    const url = 'http://localhost:8082/api/books';
+    const url = `${apiUrl}/books`;
     const method = 'POST';
-
     const response = await fetch(url, {
       method,
       headers: {

@@ -1,9 +1,5 @@
-FROM openjdk:17-jdk
+FROM openjdk:21-jdk
 
-WORKDIR /app
+COPY target/server-0.0.1-SNAPSHOT.jar app-0.0.1-SNAPSHOT.jar
 
-COPY target/server-0.0.1-SNAPSHOT.jar /app/server-0.0.1-SNAPSHOT.jar
-
-EXPOSE 8082
-
-CMD ["java", "-jar", "server-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app-0.0.1-SNAPSHOT.jar", "--spring.config.location=classpath:/application-docker.properties"]

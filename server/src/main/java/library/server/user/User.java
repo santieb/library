@@ -1,6 +1,6 @@
 package library.server.user;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import org.springframework.context.annotation.Primary;
 
 @Entity

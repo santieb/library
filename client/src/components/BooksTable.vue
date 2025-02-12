@@ -8,6 +8,7 @@
           <th class="border py-2 px-4">Genre</th>
           <th class="border py-2 px-4">Pages</th>
           <th class="border py-2 px-4">Synopsis</th>
+          <th class="border py-2 px-4">availability</th>
           <th class="border py-2 px-4">Actions</th>
         </tr>
       </thead>
@@ -18,6 +19,7 @@
           <td class="border py-2 px-4">{{ book.genre }}</td>
           <td class="border py-2 px-4">{{ book.pages }}</td>
           <td class="border py-2 px-4">{{ book.synopsis }}</td>
+          <td class="border py-2 px-4">{{ book.isLoan ? 'Prestado' : 'Disponible'}}</td>          
           <td class="border py-2 px-4">
             <button @click="() => deleteBook(book.id)" class="bg-red-500 text-white py-1 px-2 rounded">Delete</button>
             <button @click="() => editBook(book.id)" class="bg-blue-500 text-white py-1 px-2 rounded">Update</button>
@@ -30,7 +32,7 @@
 
 <script>
 import FilterBar from './FilterBar.vue';
-
+const apiUrl = import.meta.env.VITE_API_URL;
 export default {
   components: {
     FilterBar,
@@ -48,7 +50,7 @@ export default {
   methods: {
     async fetchBooks() {
       try {
-        const response = await fetch('http://localhost:8082/api/books');
+        const response = await fetch(`${apiUrl}/books`);
         const data = await response.json();
         console.log(data);
         this.books = data;
@@ -59,7 +61,7 @@ export default {
     },
     async deleteBook(bookId) {
       try {
-        const response = await fetch(`http://localhost:8082/api/books/${bookId}`, {
+        const response = await fetch(`${apiUrl}/books/${bookId}`, {
           method: 'DELETE',
         });
 

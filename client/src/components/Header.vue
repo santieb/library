@@ -34,6 +34,11 @@
                   </router-link>
                 </li>
                 <li>
+                  <router-link to="/loans" class="flex py-2 text-base font-medium text-body-color hover:font-bold lg:ml-12 lg:inline-flex dark:text-dark-6 ">
+                    Loans
+                  </router-link>
+                </li>
+                <li>
                   <router-link to="/register" class="flex py-2 text-base font-medium text-body-color hover:font-bold lg:ml-12 lg:inline-flex dark:text-dark-6 e">
                     Register user
                   </router-link>

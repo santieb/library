@@ -4,6 +4,7 @@ import BooksPage from '@/pages/BooksPage.vue';
 import BookFormPage from '@/pages/BookFormPage.vue';
 import RegisterPage from '@/pages/RegisterPage.vue';
 import LoginPage from '@/pages/LoginPage.vue';
+import LoansPage from '@/pages/LoansPage.vue';
 
 const routes = [
   {
@@ -25,6 +26,10 @@ const routes = [
   {
     path: '/login',
     component: LoginPage,
+  },
+  {
+    path: '/loans',
+    component: LoansPage,
   }
 ];
 
