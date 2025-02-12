@@ -1,0 +1,14 @@
+library\server\loan\Loan.class
+library\server\book\BookController.class
+library\server\user\UserService.class
+library\server\book\BookRepository.class
+library\server\loan\LoanController.class
+library\server\user\UserController.class
+library\server\ServerApplication.class
+library\server\user\UserRepository.class
+library\server\CorsConfig.class
+library\server\loan\LoanRepository.class
+library\server\loan\LoanService.class
+library\server\book\BookService.class
+library\server\user\User.class
+library\server\book\Book.class
